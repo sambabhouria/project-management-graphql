@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Project from './pages/Project'
 import NotFound from './pages/NotFound'
 
+//  InMemoryCache : add client without reload page
 const cache = new InMemoryCache({
   typePolicies: {
     Query: {

@@ -7,7 +7,9 @@ import { GET_PROJECTS } from '../queries/projectQueries'
 export default function ClientRow({ client }) {
   const [deleteClient] = useMutation(DELETE_CLIENT, {
     variables: { id: client.id },
+    // this is good but much of this bug app
     refetchQueries: [{ query: GET_CLIENTS }, { query: GET_PROJECTS }],
+    // we get in the cach the client we delete and map without it
     // update(cache, { data: { deleteClient } }) {
     //   const { clients } = cache.readQuery({ query: GET_CLIENTS });
     //   cache.writeQuery({

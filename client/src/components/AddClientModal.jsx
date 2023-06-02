@@ -11,6 +11,8 @@ export default function AddClientModal() {
 
   const [addClient] = useMutation(ADD_CLIENT, {
     variables: { name, email, phone },
+
+    // a clean way to  update the ui
     update(cache, { data: { addClient } }) {
       const { clients } = cache.readQuery({ query: GET_CLIENTS })
 

@@ -1,5 +1,6 @@
 const express = require('express')
-const colors = require('colors')
+require('colors')
+const path = require('path')
 const cors = require('cors')
 const { graphqlHTTP } = require('express-graphql')
 // const { buildSchema } = require('graphql')
@@ -39,5 +40,15 @@ app.use(
     graphiql: process.env.NODE_ENV === 'development',
   })
 )
+
+app.use(express.static(path.join(__dirname, '../../client/dist')))
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '../../client/dist/index.html'))
+)
+
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message })
+  next()
+})
 
 app.listen(port, console.log(`Server running on port ${port}`))
