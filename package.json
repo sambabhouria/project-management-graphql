@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run dev --prefix backend\"  \"npm run dev --prefix frontend\" ",
-    "build": "cd server && npm install && npm run build  && cd ../client && npm install && npm run build",
-    "start": "TG_ALLOW_MIXED=ALLOW  node backend/build/index.js",
+    "build": "cd server && npm install && cd ../client && npm install && npm run build",
+    "start": "TG_ALLOW_MIXED=ALLOW  node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
