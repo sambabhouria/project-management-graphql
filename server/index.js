@@ -41,9 +41,15 @@ app.use(
   })
 )
 
-app.use(express.static(path.join(__dirname, '../../client/dist')))
+// add middlewares
+// app.use(express.static(path.join(__dirname, '..', 'build')))
+// app.use(express.static('public'))
+// app.use(express.static(path.join(__dirname, '../client/build/static')))
+
+app.use(express.static(path.join(__dirname, '../client', 'build')))
 app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, '../../client/dist/index.html'))
+  // res.sendFile(path.join(__dirname, '../../client/build/index.html'))
+  res.sendFile(path.join(__dirname, '../client', 'build', 'index.html'))
 )
 
 app.use((err, req, res, next) => {
