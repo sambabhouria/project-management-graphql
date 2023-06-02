@@ -10,6 +10,9 @@ const connectDB = require('./config/db')
 require('dotenv').config()
 const port = process.env.PORT || 4000
 
+// const PORT  = parseInt((process.env.PORT || '4000') , 10)
+// const PORT: number = parseInt((process.env.PORT || '4000') as string, 10)
+
 // Construct a schema, using GraphQL schema language
 // const schema = buildSchema(`
 //   type Query {
