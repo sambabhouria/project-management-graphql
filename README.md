@@ -10,3 +10,5 @@ Project management app from my GraphQL
 
 ![alt text](0.png)
 ![alt text](1.png)
+![alt text](2.png)
+![alt text](3.png)
