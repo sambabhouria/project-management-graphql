@@ -185,7 +185,7 @@ const mutation = new GraphQLObjectType({
               status: args.status,
             },
           },
-          { new: true }
+          { new: true } // if not there create a new one
         )
       },
     },
@@ -194,5 +194,5 @@ const mutation = new GraphQLObjectType({
 
 module.exports = new GraphQLSchema({
   query: RootQuery,
-  // mutation,
+  mutation,
 })
